@@ -12,6 +12,11 @@ module.exports = {
   rules: {
     "simple-import-sort/imports": "error",
     "simple-import-sort/exports": "error",
+    "max-len": ["error", 90],
+    "quotes": [2, "single", { "avoidEscape": true }],
+    "indent": ["error", 2],
+    "prettier/prettier": ["error", { "endOfLine": "auto" }],
+    "curly": "error"
   },
   root: true,
   env: {
