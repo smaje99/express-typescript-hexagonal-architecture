@@ -4,3 +4,7 @@ dist/
 .idea
 .env
 coverage/
+.vscode/cspell.json
+.env.*
+.env
+package-lock.json
