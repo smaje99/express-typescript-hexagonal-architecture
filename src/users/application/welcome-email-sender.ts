@@ -1,4 +1,5 @@
 import { EmailSender } from '../domain/email-sender';
+import { UserNotFound } from '../domain/user-not-found';
 import { UserRepository } from '../domain/user-repository';
 
 export class WelcomeEmailSender {
@@ -11,7 +12,7 @@ export class WelcomeEmailSender {
     const user = await this.userRepository.getById(userId);
 
     if (!user) {
-      throw new Error(`User ID not found ${userId}`);
+      throw new UserNotFound(userId);
     }
 
     await this.emailSender.send(user.email, 'Welcome to our application!');
