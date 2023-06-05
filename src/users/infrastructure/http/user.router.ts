@@ -1,14 +1,11 @@
 import { Router } from 'express';
 
-import { userController } from '../dependencies';
+import { userGetController, userPostController } from '../dependencies';
 
 const userRouter = Router();
 
-userRouter.post(
-  '/:id/welcome',
-  userController.runWelcomeEmailSender.bind(userController)
-);
+userRouter.get('/:id', userGetController.run.bind(userGetController));
 
-userRouter.get('/:id', userController.runUserByIdFinder.bind(userController));
+userRouter.post('/:id/welcome', userPostController.run.bind(userPostController));
 
 export { userRouter };
